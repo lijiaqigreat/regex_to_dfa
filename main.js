@@ -531,20 +531,22 @@ var t2d=[
   {'end':1},
   {}
 ];
-console.log("t2d: ");
-console.log(t2d);
-var t2din=inverse_fa(t2d);
-console.log("t2din: ");
-console.log(t2din);
-var t2a=reduce_dfa1(t2d);
-console.log("t2a");
-console.log(t2a);
-var t2b=reduce_dfa2(t2a);
-console.log("t2b");
-console.log(t2b);
-var t2g=fa_to_dot(t2b);
-console.log("t2g");
-console.log(t2g);
+if(exports!==undefined){
+  console.log("t2d: ");
+  console.log(t2d);
+  var t2din=inverse_fa(t2d);
+  console.log("t2din: ");
+  console.log(t2din);
+  var t2a=reduce_dfa1(t2d);
+  console.log("t2a");
+  console.log(t2a);
+  var t2b=reduce_dfa2(t2a);
+  console.log("t2b");
+  console.log(t2b);
+  var t2g=fa_to_dot(t2b);
+  console.log("t2g");
+  console.log(t2g);
+}
 
 
 

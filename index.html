@@ -10,7 +10,7 @@
   </head>
   <body>
     
-    <input id="input" type="text" value="(a|b*)a"><br>
+    <input id="input" type="text" value="(a|b*)a">Note: use '@' for empty string, use '\' for escaping character<br>
     <input id="reduce1" type="checkbox" name="a" value="b">
     Remove unreachable state<br>
     <input id="reduce2" type="checkbox">
@@ -38,15 +38,8 @@
     }
     var parser=["",function(){return false;}];
 
-    $("#parse").on("click", function(e) {
-      var input=$("#input2").val();
-      console.log(input);
-      console.log(parser[1]);
-      $("#output2").text("does "+(parser[1](input)?"":"not ")+"match regex: "+parser[0]+".");
-    });
       
     $("#generate").on("click", function(e) {
-      
       var input = $("#input").val();
       var tree=regex_to_tree(input);
       var nfa=tree_to_nfa(tree);
@@ -66,7 +59,13 @@
       $("#nfag")[0].innerHTML = nfag;
       $("#dfag")[0].innerHTML = dfag;
       parser=[input,parse(dfa)];
-    });
+    }).click();
+    $("#parse").on("click", function(e) {
+      var input=$("#input2").val();
+      console.log(input);
+      console.log(parser[1]);
+      $("#output2").text("It does "+(parser[1](input)?"":"not ")+"match regex: "+parser[0]+".");
+    }).click();
       
     </script>
     
